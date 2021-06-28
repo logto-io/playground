@@ -1,8 +1,11 @@
+@use '@/scss/underscore' as _;
+
 .wrapper {
-  padding: 20px;
+  padding: _.unit(5);
   text-align: center;
 
   .title {
     font-size: large;
+    margin: _.unit(3) 0;
   }
 }
