@@ -9,5 +9,10 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "samverschueren.linter-xo"
+  },
+  "[scss]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
   }
 }
