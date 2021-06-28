@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>Logto Playground</div>
+      <button>Login</button>
     </div>
   );
 };

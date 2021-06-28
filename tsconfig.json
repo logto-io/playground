@@ -1,4 +1,9 @@
 {
   "extends": "@logto/essentials/tsconfig.react",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
   "include": ["src"]
 }
