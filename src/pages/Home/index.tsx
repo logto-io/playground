@@ -26,13 +26,45 @@ const Home = () => {
       .map(([key, value]) => `${key}=${value}`)
       .join('&');
 
+    console.log(challenge, verifier);
+
     window.location.href = 'http://localhost:3001/oidc/auth?' + parameters;
   }, []);
+
+  const logout = useCallback(() => {
+    localStorage.removeItem('auth');
+    window.location.reload();
+  }, []);
+
+  const auth = localStorage.getItem('auth');
+  const parsed = auth && JSON.parse(auth);
+  const isAuthed = Boolean(auth);
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>Logto Playground</div>
-      <button onClick={login}>Login</button>
+      {!isAuthed && <button onClick={login}>Login</button>}
+      {isAuthed && <button onClick={logout}>Logout</button>}
+      {isAuthed && parsed && (
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Value</td>
+            </tr>
+          </thead>
+          <tbody>
+            {['access_token', 'expires_in', 'refresh_token', 'id_token', 'scope', 'token_type'].map(
+              (key) => (
+                <tr key={key}>
+                  <td>{key}</td>
+                  <td>{parsed[key]}</td>
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
