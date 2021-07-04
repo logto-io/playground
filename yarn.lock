@@ -1346,10 +1346,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@logto/essentials@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@logto/essentials/-/essentials-1.0.4.tgz#b00b15c1c83ce6ffbb0749d9ec8cae866c71b821"
-  integrity sha512-nANrA3m6DyPKOOMNj696p3vnfnMuZ/lbxMbX1tdU/m0jm2otESTiQ3Ryt/+xfpj73bJFy5O2MCtBjnuZcHmeew==
+"@logto/essentials@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@logto/essentials/-/essentials-1.0.6.tgz#2c9ed6a5287af1a2939188cdbe8c43861dfc6817"
+  integrity sha512-TI+MGyN7JMTD/xGZtuYEn5SXkAQLRKJ8iCvk8P7JJhf+lUt9v9rBgCUCJ562ITqDliU/g3dYvScSsTnTy8CEUw==
   dependencies:
     lodash.orderby "^4.6.0"
     lodash.pick "^4.4.0"

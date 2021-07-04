@@ -5,14 +5,14 @@
   "private": true,
   "scripts": {
     "start": "razzle start",
+    "start:prod": "NODE_ENV=production node build/server.js",
     "build": "razzle build",
     "lint": "xo src/",
-    "stylelint": "stylelint src/**/*.scss",
-    "test": "razzle test --env=jsdom",
-    "start:prod": "NODE_ENV=production node build/server.js"
+    "stylelint": "stylelint \"src/**/*.scss\"",
+    "test": "razzle test --env=jsdom"
   },
   "dependencies": {
-    "@logto/essentials": "^1.0.4",
+    "@logto/essentials": "^1.0.6",
     "js-base64": "^3.6.1",
     "ky": "^0.28.5",
     "query-string": "^7.0.1",
