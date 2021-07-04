@@ -1354,6 +1354,11 @@
     lodash.orderby "^4.6.0"
     lodash.pick "^4.4.0"
 
+"@logto/schemas@^1.1.0-rc.0":
+  version "1.1.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@logto/schemas/-/schemas-1.1.0-rc.0.tgz#e7d07cc8b6894c74a37fe62daa5895245c1613d6"
+  integrity sha512-Oh+ok67kcFm9sAESBR6ehVYJ3a+gBMwrsJz3YoIFXV6giTPr7q0L3Q/pkoSOusX/4jyNyIoKo3x5HI9yr4ewoA==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
