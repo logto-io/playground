@@ -57,7 +57,10 @@ const Home = () => {
     localStorage.removeItem('auth');
     window.location.href =
       'http://localhost:3001/oidc/session/end?' +
-      qs.stringify({ id_token_hint: parsed.id_token }, { encode: false });
+      qs.stringify(
+        { id_token_hint: parsed.id_token, post_logout_redirect_uri: 'http://localhost:3000' },
+        { encode: false }
+      );
   }, []);
 
   return (
