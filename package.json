@@ -12,7 +12,7 @@
     "test": "razzle test --env=jsdom"
   },
   "dependencies": {
-    "@logto/essentials": "^1.0.6",
+    "@logto/essentials": "^1.0.7",
     "@logto/schemas": "^1.1.0-rc.0",
     "js-base64": "^3.6.1",
     "ky": "^0.28.5",
