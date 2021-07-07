@@ -1,5 +1,5 @@
 import ky from 'ky';
-import React, { FormEventHandler, useState } from 'react';
+import React, { FormEventHandler, MouseEventHandler, useState } from 'react';
 import styles from './index.module.scss';
 
 const SignIn = () => {
@@ -18,6 +18,15 @@ const SignIn = () => {
           },
         })
         .json();
+      window.location.href = redirectTo;
+    } catch (error: unknown) {
+      setError(String(error));
+    }
+  };
+
+  const abort: MouseEventHandler = async () => {
+    try {
+      const { redirectTo } = await ky.post('/api/sign-in/abort').json();
       window.location.href = redirectTo;
     } catch (error: unknown) {
       setError(String(error));
@@ -44,6 +53,7 @@ const SignIn = () => {
         />
         <button type="submit">sign in</button>
       </form>
+      <button onClick={abort}>abort</button>
       {error && <div>{error}</div>}
     </div>
   );
