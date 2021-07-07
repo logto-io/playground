@@ -6,7 +6,13 @@ const Callback = () => {
   const [error, setError] = useState<string>();
 
   useEffect(() => {
-    const { code } = qs.parse(location.search);
+    const { code, error } = qs.parse(location.search);
+
+    if (error) {
+      setError('Error:' + String(error));
+      return;
+    }
+
     const verifier = localStorage.getItem('verifier');
     const run = async () => {
       if (typeof code !== 'string') {
@@ -42,7 +48,12 @@ const Callback = () => {
     void run();
   }, []);
 
-  return <div style={{ textAlign: 'center' }}>{error ?? 'Fetching token'}</div>;
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <div>{error ?? 'Fetching token'}</div>
+      {error && <a href="/">Home</a>}
+    </div>
+  );
 };
 
 export default Callback;
