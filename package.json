@@ -47,6 +47,10 @@
     "webpack-dev-server": "^3.11.2",
     "xo": "0.39.1"
   },
+  "engines": {
+    "node": ">=14.15.0",
+    "yarn": "^1.22.10"
+  },
   "prettier": "@logto/essentials/.prettierrc.json",
   "stylelint": {
     "extends": "@logto/essentials/.stylelintrc"
