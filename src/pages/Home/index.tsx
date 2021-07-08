@@ -3,6 +3,7 @@ import { fromUint8Array } from 'js-base64';
 import qs from 'query-string';
 import styles from './index.module.scss';
 import ky from 'ky';
+import { baseUrl, oidcUrl } from '@/consts/url';
 
 function base64URLEncode(array: Uint8Array) {
   return fromUint8Array(array).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
@@ -24,11 +25,11 @@ const Home = () => {
     console.log(challenge, verifier);
 
     window.location.href =
-      'http://localhost:3001/oidc/auth?' +
+      `${oidcUrl}/auth?` +
       qs.stringify(
         {
           response_type: 'code',
-          redirect_uri: 'http://localhost:3000/callback',
+          redirect_uri: `${baseUrl}/callback`,
           client_id: 'foo',
           scope: 'openid%20offline_access',
           prompt: 'consent',
@@ -44,21 +45,21 @@ const Home = () => {
       const body = new URLSearchParams();
       body.set('token', String(parsed.access_token));
       body.set('client_id', 'foo');
-      await ky.post('http://localhost:3001/oidc/token/revocation', { body });
+      await ky.post(`${oidcUrl}/token/revocation`, { body });
     }
 
     if (parsed.refresh_token) {
       const body = new URLSearchParams();
       body.set('token', String(parsed.refresh_token));
       body.set('client_id', 'foo');
-      await ky.post('http://localhost:3001/oidc/token/revocation', { body });
+      await ky.post(`${oidcUrl}/token/revocation`, { body });
     }
 
     localStorage.removeItem('auth');
     window.location.href =
-      'http://localhost:3001/oidc/session/end?' +
+      `${oidcUrl}/session/end?` +
       qs.stringify(
-        { id_token_hint: parsed.id_token, post_logout_redirect_uri: 'http://localhost:3000' },
+        { id_token_hint: parsed.id_token, post_logout_redirect_uri: baseUrl },
         { encode: false }
       );
   }, []);
