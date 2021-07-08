@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import qs from 'query-string';
 import ky from 'ky';
+import { baseUrl, oidcUrl } from '@/consts/url';
 
 const Callback = () => {
   const [error, setError] = useState<string>();
@@ -27,14 +28,14 @@ const Callback = () => {
 
       // For `application/x-www-form-urlencoded`
       const body = new URLSearchParams();
-      body.set('redirect_uri', 'http://localhost:3000/callback');
+      body.set('redirect_uri', `${baseUrl}/callback`);
       body.set('code', code);
       body.set('grant_type', 'authorization_code');
       body.set('client_id', 'foo');
       body.set('code_verifier', verifier);
 
       try {
-        const json = await ky.post('http://localhost:3001/oidc/token', { body }).json();
+        const json = await ky.post(`${oidcUrl}/token`, { body }).json();
 
         localStorage.setItem('auth', JSON.stringify(json));
         localStorage.removeItem('verifier');
