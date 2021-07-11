@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 import ky from 'ky';
 
+type Response = {
+  redirectTo: string;
+};
+
 const Consent = () => {
   useEffect(() => {
     const consent = async () => {
-      const { redirectTo } = await ky.post('/api/sign-in/consent').json();
+      const { redirectTo } = await ky.post('/api/sign-in/consent').json<Response>();
       window.location.href = redirectTo;
     };
 

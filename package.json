@@ -7,52 +7,71 @@
     "start": "razzle start",
     "start:prod": "NODE_ENV=production node build/server.js",
     "build": "razzle build",
-    "lint": "xo src/",
+    "lint": "eslint --format pretty --ext .ts --ext .tsx src",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "test": "razzle test --env=jsdom"
   },
   "dependencies": {
-    "@logto/essentials": "^1.0.7",
+    "@logto/essentials": "^1.1.0-rc.1",
     "@logto/schemas": "^1.1.0-rc.0",
     "js-base64": "^3.6.1",
     "ky": "^0.28.5",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "zod": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@logto/eslint-config": "^0.1.0-rc.6",
+    "@logto/eslint-config-react": "^0.1.0-rc.6",
+    "@logto/ts-config": "^0.1.0-rc.6",
+    "@logto/ts-config-react": "^0.1.0-rc.6",
     "@types/jest": "^26.0.23",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "@types/react-router-dom": "^5.1.7",
     "@types/webpack-env": "^1.16.0",
     "babel-preset-razzle": "4.0.5",
-    "eslint": "^7.29.0",
-    "eslint-config-xo-react": "^0.25.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint": "^7.30.0",
+    "eslint-formatter-pretty": "^4.1.0",
     "html-webpack-plugin": "^4.5.2",
     "husky": "^6.0.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "prettier": "^2.3.2",
     "razzle": "4.0.5",
     "razzle-dev-utils": "4.0.5",
     "razzle-plugin-scss": "^4.0.5",
     "stylelint": "^13.13.1",
-    "stylelint-config-xo-scss": "^0.14.0",
+    "typescript": "^4.3.5",
     "webpack": "^4.44.1",
-    "webpack-dev-server": "^3.11.2",
-    "xo": "0.39.1"
+    "webpack-dev-server": "^3.11.2"
   },
   "engines": {
     "node": ">=14.15.0",
     "yarn": "^1.22.10"
   },
-  "prettier": "@logto/essentials/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "@logto/react",
+    "rules": {
+      "unicorn/prevent-abbreviations": [
+        "error",
+        {
+          "replacements": {
+            "src": false
+          }
+        }
+      ]
+    }
+  },
   "stylelint": {
-    "extends": "@logto/essentials/.stylelintrc"
+    "extends": "@logto/eslint-config-react/.stylelintrc"
+  },
+  "prettier": "@logto/eslint-config/.prettierrc",
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
   }
 }
