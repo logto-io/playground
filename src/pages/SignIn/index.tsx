@@ -2,6 +2,10 @@ import ky from 'ky';
 import React, { FormEventHandler, MouseEventHandler, useState } from 'react';
 import styles from './index.module.scss';
 
+type Response = {
+  redirectTo: string;
+};
+
 const SignIn = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +21,7 @@ const SignIn = () => {
             password,
           },
         })
-        .json();
+        .json<Response>();
       window.location.href = redirectTo;
     } catch (error: unknown) {
       setError(String(error));
@@ -26,7 +30,7 @@ const SignIn = () => {
 
   const abort: MouseEventHandler = async () => {
     try {
-      const { redirectTo } = await ky.post('/api/sign-in/abort').json();
+      const { redirectTo } = await ky.post('/api/sign-in/abort').json<Response>();
       window.location.href = redirectTo;
     } catch (error: unknown) {
       setError(String(error));
@@ -53,7 +57,9 @@ const SignIn = () => {
         />
         <button type="submit">sign in</button>
       </form>
-      <button onClick={abort}>abort</button>
+      <button type="button" onClick={abort}>
+        abort
+      </button>
       {error && <div>{error}</div>}
     </div>
   );

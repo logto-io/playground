@@ -1,15 +1,6 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.defaultFormatter": "samverschueren.linter-xo",
-  "xo.enable": true,
-  "xo.format.enable": true,
   "editor.formatOnSave": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "samverschueren.linter-xo"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "samverschueren.linter-xo"
-  },
   "[scss]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.stylelint": true

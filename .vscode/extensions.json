@@ -1,6 +1,7 @@
 {
   "recommendations": [
-    "samverschueren.linter-xo",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint"
   ]
 }
