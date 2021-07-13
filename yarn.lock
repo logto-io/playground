@@ -1360,20 +1360,20 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@logto/eslint-config-react@^0.1.0-rc.6":
-  version "0.1.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@logto/eslint-config-react/-/eslint-config-react-0.1.0-rc.6.tgz#ced00712fde5e45b35a0c7e3fb02de0f58755a64"
-  integrity sha512-xhLF6QXj3v/rJVRXTZb2wd5PwrO3evy1iDl1sjK4keXsDGCr579Ts7lObIMs6F4FKXZLeOpvVjZEDTDbRdrhTg==
+"@logto/eslint-config-react@^0.1.0-rc.10":
+  version "0.1.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@logto/eslint-config-react/-/eslint-config-react-0.1.0-rc.10.tgz#db8d5a0dec68f601d3dea03934bdd7bdaa089820"
+  integrity sha512-HmidNrdqJ+5VJXB3HN7CqLrFgRHiHUaZfA9YO9AXXaflkvVX01h2USdOXtWDgLgQxveZ6/R6Z7hnu4FzJCG4ig==
   dependencies:
     eslint-config-xo-react "^0.25.0"
     eslint-plugin-react "^7.24.0"
     eslint-plugin-react-hooks "^4.2.0"
     stylelint-config-xo-scss "^0.14.0"
 
-"@logto/eslint-config@^0.1.0-rc.6":
-  version "0.1.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@logto/eslint-config/-/eslint-config-0.1.0-rc.6.tgz#f72193b43e2b17ef28513f9fdad948654662b187"
-  integrity sha512-/PqlhG//lYxMNAoZXPpe+yvdH0vvdKNPmvugYjK99lIgpM0EUhRWnrHLX02ZFp1nldvcfTn7AtkpvSD2bb6zVg==
+"@logto/eslint-config@^0.1.0-rc.10":
+  version "0.1.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@logto/eslint-config/-/eslint-config-0.1.0-rc.10.tgz#fedd684b9f4275c383dc7f426df78dc804513d10"
+  integrity sha512-jayvQ4sSApvrcztNjRc5FT71qMKlWJrJQOYLqNvmN9cm0kLLZfEXWlWTJYDJf5Wf5X3djyDBSZRRx9VjQODYRw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.28.2"
     "@typescript-eslint/parser" "^4.28.2"
@@ -1401,15 +1401,15 @@
   resolved "https://registry.yarnpkg.com/@logto/schemas/-/schemas-1.1.0-rc.0.tgz#e7d07cc8b6894c74a37fe62daa5895245c1613d6"
   integrity sha512-Oh+ok67kcFm9sAESBR6ehVYJ3a+gBMwrsJz3YoIFXV6giTPr7q0L3Q/pkoSOusX/4jyNyIoKo3x5HI9yr4ewoA==
 
-"@logto/ts-config-react@^0.1.0-rc.6":
-  version "0.1.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@logto/ts-config-react/-/ts-config-react-0.1.0-rc.6.tgz#9ccc880ac3d2e6634330e33634aa7160f2d9df3b"
-  integrity sha512-bKZUuV6rHwWES2lBNYC1D7k6N3jyowAh/jgzsGhjWij1As8LWYW7u5Dtyn8WIHrh0cA/fM/vOwfdOa4SfGv7wA==
+"@logto/ts-config-react@^0.1.0-rc.10":
+  version "0.1.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@logto/ts-config-react/-/ts-config-react-0.1.0-rc.10.tgz#caf7ff99666716cc1d751e7402709a2e703da069"
+  integrity sha512-mFJpEKOLT8m9RYz2Howh3Y483ufJ46HBhV87cukiw9xZ9uNSgWDYyiFyOazC0j2hHmHSfKBYfnkLgtDEGVDPPQ==
 
-"@logto/ts-config@^0.1.0-rc.6":
-  version "0.1.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@logto/ts-config/-/ts-config-0.1.0-rc.6.tgz#d95ead3eace4644a7fbcbb13bfa1b615b9acee8b"
-  integrity sha512-T2TPpIyisYCUqMuR2J7kOhZ1IQ19z1wWFldH6yQThpFmPakytnDU+2UpbOucCR/CBd64aW3KIyqrJSGTOmg3dg==
+"@logto/ts-config@^0.1.0-rc.10":
+  version "0.1.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@logto/ts-config/-/ts-config-0.1.0-rc.10.tgz#a43cd919fb9fb60c263d65481b36e6b0623d5f96"
+  integrity sha512-KbwoKIE80I96WrCJhhL3+N73JfbfpmfFwCP6Jsng/q6RpWj360GzoMWrpiupudrrPz5lSVsI0mnEmH4hVUbebA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
