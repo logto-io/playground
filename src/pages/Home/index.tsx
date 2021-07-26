@@ -25,7 +25,7 @@ const Home = () => {
   const parsed = conditional(auth && Auth.parse(JSON.parse(auth)));
   const isAuthed = Boolean(auth);
 
-  const login = useCallback(async () => {
+  const signIn = useCallback(async () => {
     const verifier = base64URLEncode(crypto.getRandomValues(new Uint8Array(32)));
     const encoded = new TextEncoder().encode(verifier);
     const challenge = base64URLEncode(
@@ -51,7 +51,7 @@ const Home = () => {
       );
   }, []);
 
-  const logout = useCallback(async () => {
+  const signOut = useCallback(async () => {
     if (parsed?.access_token) {
       const body = new URLSearchParams();
       body.set('token', String(parsed.access_token));
@@ -79,13 +79,13 @@ const Home = () => {
     <div className={styles.wrapper}>
       <div className={styles.title}>Logto Playground</div>
       {!isAuthed && (
-        <button type="button" onClick={login}>
-          Login
+        <button type="button" onClick={signIn}>
+          Sign In
         </button>
       )}
       {isAuthed && (
-        <button type="button" onClick={logout}>
-          Logout
+        <button type="button" onClick={signOut}>
+          Sign Out
         </button>
       )}
       {isAuthed && parsed && (
