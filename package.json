@@ -6,7 +6,7 @@
   "scripts": {
     "dev:tsc": "tsc -b -w --preserveWatchOutput",
     "dev:razzle": "razzle start",
-    "start": "concurrently -c \"blue,cyan\" \"yarn:dev:tsc\" -k \"yarn:dev:razzle\"",
+    "start": "concurrently -c \"blue,cyan\" \"pnpm:dev:tsc\" -k \"pnpm:dev:razzle\"",
     "start:prod": "NODE_ENV=production node build/server.js",
     "build": "tsc -b && razzle build",
     "lint": "eslint --format pretty --ext .ts --ext .tsx src",
@@ -46,6 +46,7 @@
     "husky": "^6.0.0",
     "lint-staged": ">=10",
     "mini-css-extract-plugin": "^0.9.0",
+    "postcss": "^8.3.6",
     "prettier": "^2.3.2",
     "razzle": "4.0.5",
     "razzle-dev-utils": "4.0.5",
@@ -57,20 +58,10 @@
   },
   "engines": {
     "node": ">=14.15.0",
-    "yarn": "^1.22.10"
+    "pnpm": ">=6"
   },
   "eslintConfig": {
-    "extends": "@logto/react",
-    "rules": {
-      "unicorn/prevent-abbreviations": [
-        "error",
-        {
-          "replacements": {
-            "src": false
-          }
-        }
-      ]
-    }
+    "extends": "@logto/react"
   },
   "stylelint": {
     "extends": "@logto/eslint-config-react/.stylelintrc"
