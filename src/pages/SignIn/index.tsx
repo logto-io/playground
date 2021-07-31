@@ -6,6 +6,9 @@ type Response = {
   redirectTo: string;
 };
 
+/**
+ * @deprecated Implemented in logto/packages/ui
+ */
 const SignIn = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

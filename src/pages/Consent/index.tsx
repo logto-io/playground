@@ -5,6 +5,9 @@ type Response = {
   redirectTo: string;
 };
 
+/**
+ * @deprecated Implemented in logto/packages/ui
+ */
 const Consent = () => {
   useEffect(() => {
     const consent = async () => {
