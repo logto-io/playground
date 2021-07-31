@@ -7,13 +7,12 @@
 Create `.env` file with the following content:
 
 ```env
-RAZZLE_OIDC_BASE_URL=http://localhost:3001/oidc
+RAZZLE_OIDC_BASE_URL=https://logto.dev/oidc
 ```
-
-Ensure your [logto core service](https://github.com/logto-io/logto) is up and listening on port 3001, then
+Then
 
 ```bash
-yarn && yarn start
+pnpm i && pnpm start
 ```
 
 Happy hacking on http://localhost:3000/ !
