@@ -46,6 +46,7 @@ const Home = () => {
           prompt: 'consent',
           code_challenge: challenge,
           code_challenge_method: 'S256',
+          resource: 'https://api.logto.io',
         },
         { encode: false }
       );
